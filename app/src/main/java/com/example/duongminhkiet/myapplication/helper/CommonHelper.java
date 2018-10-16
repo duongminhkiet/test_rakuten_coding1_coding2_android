@@ -94,10 +94,7 @@ public class CommonHelper {
             while (amountItemEmpty - i > 0) {
                 i++;
                 Item itemFoundMaxNumberContact = sortByNumberContactDESC(room);//find optimize item
-
-                Item itx = hiddenItemFoundInRoom(room, itemFoundMaxNumberContact);//hidden optimze item found
-                itx.setValue(0);
-
+                itemFoundMaxNumberContact.setValue(0);
 
                 //reset numberContact
                 resetNumberContact(room);//reset Number Contact
@@ -109,15 +106,6 @@ public class CommonHelper {
         }
     }
 
-    private static Item hiddenItemFoundInRoom(Room room, Item item) {
-        ArrayList<Item> mArr = room.getmArrItem();
-        for (Item it : mArr) {
-            if ((it.getCol() == item.getCol()) && (it.getRow() == item.getRow())) {
-                return it;
-            }
-        }
-        return null;
-    }
 
     private static void resetNumberContact(Room room) {
         ArrayList<Item> mArr = room.getmArrItem();
